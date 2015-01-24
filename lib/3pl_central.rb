@@ -17,22 +17,3 @@ class Object
     self.is_a?(Array) ? self : [self]
   end
 end
-## String Extension
-class String
-  def camelize
-    self.split("_").each {|s| s.capitalize! }.join("")
-  end
-  # def camelize!
-  #   self.replace(self.split("_").each {|s| s.capitalize! }.join(""))
-  # end
-  def underscore
-    self.scan(/[A-Z][a-z]*/).join("_").downcase
-  end
-  # def underscore!
-  #   self.replace(self.scan(/[A-Z][a-z]*/).join("_").downcase)
-  # end
-
-  def constantize
-    Object.const_get(self)
-  end
-end
